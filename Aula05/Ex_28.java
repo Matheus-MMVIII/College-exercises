@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Ex_32 {
+public class Ex_28 {
 
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
@@ -11,12 +11,13 @@ public class Ex_32 {
             
             System.out.print("Digite a velocidade media em km/h: ");
             float speed = sc.nextFloat();
-            
-            System.out.print("Digite o rendimento do veiculo em porcentaguem: ");
-            float performace = sc.nextFloat();
 
             if (distance > 0 && speed > 0) {
-                System.out.println("O consumo de combustivel e de" + (distance*speed*performace));
+                if ((speed*distance) % 3600 == 0)
+                    System.out.println("O tempo da viaguem e de: " + ((speed*distance)/3600) + "h");
+                else {
+                    System.out.println("O tempo da viaguem e de: " + ((speed*distance)/3600) + "h" + (((speed*distance) % 3600)*60/10) + "min");
+                }
             }else {
                 System.out.println("Error: tente colocar apenas valores positivos.");
             }
