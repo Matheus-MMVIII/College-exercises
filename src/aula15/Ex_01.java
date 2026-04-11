@@ -100,7 +100,7 @@ public class Ex_01 {
                         case 6 -> "Sexta-feira";
                         case 7 -> "Sábado";
                         default -> throw new Exception();
-                    }
+                    };
                     System.out.println("O dia é: " + dayString);
                 }
                 case 7 -> {
