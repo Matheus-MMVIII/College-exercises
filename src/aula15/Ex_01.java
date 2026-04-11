@@ -91,16 +91,14 @@ public class Ex_01 {
                 case 6 -> {
                     System.out.println("Digite o numero do dia da semana. ");
                     int day = sc.nextInt();
-                    String dayString = "";
-
-                    switch (day) {
-                        case 1 -> dayString = "Domingo";
-                        case 2 -> dayString = "Segunda-feira";
-                        case 3 -> dayString = "Terça-feira";
-                        case 4 -> dayString = "Quarta-feira";
-                        case 5 -> dayString = "Quinta-feira";
-                        case 6 -> dayString = "Sexta-feira";
-                        case 7 -> dayString = "Sábado";
+                    String dayString = switch (day) {
+                        case 1 -> "Domingo";
+                        case 2 -> "Segunda-feira";
+                        case 3 -> "Terça-feira";
+                        case 4 -> "Quarta-feira";
+                        case 5 -> "Quinta-feira";
+                        case 6 -> "Sexta-feira";
+                        case 7 -> "Sábado";
                         default -> throw new Exception();
                     }
                     System.out.println("O dia é: " + dayString);
