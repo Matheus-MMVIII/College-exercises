@@ -27,33 +27,28 @@ public class Ex_01 {
                 case 2 -> {
                     System.out.println("Digite o plano escolhido. ");
                     String flat = sc.next().toUpperCase();
-                    Double price = 0D;
-
-                    switch (flat) {
-                        case "BASICO" -> price = 50.0D;
-                        case "PREMIUN" -> price = 100.0D;
-                        case "ULTRA" -> price = 150.0D;
+                    Double price = switch (flat) {
+                        case "BASICO" -> 50.0D;
+                        case "PREMIUN" -> 100.0D;
+                        case "ULTRA" -> 150.0D;
                         default -> throw new Exception();
-                    }
+                    };
                     System.out.println("O preço do plano é de: " + price);
                 }
                 case 3 -> {
                     System.out.println("Digite o turno das aulas. ");
                     String shift = sc.next().toUpperCase();
-                    String turn;
-
-                    switch (shift) {
-                        case "M" -> turn = "MATUTINO";
-                        case "V" -> turn = "VESPERTINO";
-                        case "N" -> turn = "NOTURNO";
+                    String turn = switch (shift) {
+                        case "M" -> "MATUTINO";
+                        case "V" -> "VESPERTINO";
+                        case "N" -> "NOTURNO";
                         default -> throw new Exception();
-                    }
+                    };
                     System.out.println(turn);
                 }
                 case 4 -> {
                     System.out.println("Digite a classe escolhida. ");
                     String userClass = sc.next();
-                    String classChoseDescription = "";
                     int numClass = 0;
                     if ("guerreiro".equalsIgnoreCase(userClass)) {
                         numClass = 1;
@@ -63,12 +58,12 @@ public class Ex_01 {
                         numClass = 3;
                     }
 
-                    switch (numClass) {
-                        case 1 -> classChoseDescription = "Especialista em combate corpo a corpo, com alta resistência.";
-                        case 2 -> classChoseDescription = "Utiliza poderes mágicos para atacar à distância.";
-                        case 3 -> classChoseDescription = "Possui alta precisão em ataques com arco e flecha.";
+                    String classChoseDescription = switch (numClass) {
+                        case 1 -> "Especialista em combate corpo a corpo, com alta resistência.";
+                        case 2 -> "Utiliza poderes mágicos para atacar à distância.";
+                        case 3 -> "Possui alta precisão em ataques com arco e flecha.";
                         default -> throw new Exception();
-                    }
+                    };
 
                     System.out.println(classChoseDescription);
                 }
@@ -77,14 +72,12 @@ public class Ex_01 {
                     String userName = sc.next();
                     System.out.println("Digite o numero do pedido. ");
                     int orderNumber = sc.nextInt();
-                    String order = "";
-
-                    switch (orderNumber) {
-                        case 2 -> order = "Hambúrguer";
-                        case 3 -> order = "Pizza";
-                        case 1 -> order = "Salada";
+                    String order = switch (orderNumber) {
+                        case 2 -> "Hambúrguer";
+                        case 3 -> "Pizza";
+                        case 1 -> "Salada";
                         default -> throw new Exception();
-                    }
+                    };
 
                     System.out.println("Nome: " + userName + " Pedido: " + order);
                 }
@@ -106,7 +99,6 @@ public class Ex_01 {
                 case 7 -> {
                     System.out.println("Digite o nome da bebida. ");
                     String order = sc.next();
-                    String orderString = "";
                     int orderN = 0;
 
                     if ("agua".equalsIgnoreCase(order)) {
@@ -117,12 +109,12 @@ public class Ex_01 {
                         orderN = 3;
                     }
 
-                    switch (orderN) {
-                        case 1 -> orderString = "Água";
-                        case 2 -> orderString = "Súco";
-                        case 3 -> orderString = "Refrigerante";
+                    String orderString = switch (orderN) {
+                        case 1 -> "Água";
+                        case 2 -> "Súco";
+                        case 3 -> "Refrigerante";
                         default -> throw new Exception();
-                    }
+                    };
                     System.out.println("A bebida é: " + orderString);
                 }
                 case 8 -> {
@@ -151,7 +143,6 @@ public class Ex_01 {
                 case 9 -> {
                     System.out.println("Digite o meio de transporte. ");
                     String transport = sc.next();
-                    String transportTimeString = "";
                     int transportN = 0;
 
                     if ("onibus".equalsIgnoreCase(transport)) {
@@ -162,12 +153,12 @@ public class Ex_01 {
                         transportN = 3;
                     }
 
-                    switch (transportN) {
-                        case 1 -> transportTimeString = "40 minutos";
-                        case 2 -> transportTimeString = "25 minutos";
-                        case 3 -> transportTimeString = "30 minutos";
+                    String transportTimeString = switch (transportN) {
+                        case 1 -> "40 minutos";
+                        case 2 -> "25 minutos";
+                        case 3 ->"30 minutos";
                         default -> throw new Exception();
-                    }
+                    };
                     System.out.println("O tempo medio é de: " + transportTimeString);
                 }
 
