@@ -135,10 +135,64 @@ public class Ex_01 {
                     System.out.println("Total a pagar: "+priceT+"\nItens pedidos: \n"+total);
                 }
                 case 9 -> {
+                    String password = "";
+
+                    do {
+                        System.out.println("Digite a sua senha, com pelo menos 8 caracteres. ");
+                    }
+                    while ((password = sc.next()).length() < 8 && password != null && !password.isEmpty());
+                    System.out.println("Usuario cadastrado com sucesso. ");
                 }
                 case 10 -> {
+                    int quantVotesNull = 0,
+                        quantVotesOne = 0,
+                        quantVotesTwo = 0,
+                        quantVotesThree = 0,
+                        voteNow = 0,
+                        win = 0;
+
+                    do {
+                        System.out.println("Opcoes:\n1 - Candidato Um\n2 - Candidato Dois\n3 - Candidato tres\n9 - Encerrar");
+
+                        switch (voteNow) {
+                            case 0 -> quantVotesNull++;
+                            case 1 -> quantVotesOne++;
+                            case 2 -> quantVotesTwo++;
+                            case 3 -> quantVotesThree++;
+                        }
+
+                    }while ((voteNow = sc.nextInt()) != 9 && (voteNow == 0 || voteNow == 1 || voteNow == 2 || voteNow == 3));
+                    System.out.printf("Tiveram:\n%d votos nulos\n%d votos no Candidato Um\n%d votos no Candidato Dois\n%d votos no Candidato Tres\n", quantVotesNull, quantVotesOne, quantVotesTwo, quantVotesThree);
+                    if (Math.max(quantVotesOne, quantVotesTwo) == quantVotesOne) {
+                        win = 1;
+                        if (Math.max(quantVotesOne, quantVotesThree) == quantVotesThree)
+                            win = 3;
+                    }else {
+                        win = 2;
+                        if (Math.max(quantVotesTwo, quantVotesThree) == quantVotesThree)
+                            win = 3;
+                    }
+
+                    switch (win) {
+                        case 1 -> System.out.println("O ganhador foi o Candidato Um, com "+quantVotesOne+" votos.");
+                        case 2 -> System.out.println("O ganhador foi o Candidato Dois, com "+quantVotesTwo+" votos.");
+                        case 3 -> System.out.println("O ganhador foi o Candidato Tres, com "+quantVotesThree+" votos.");
+                    }
+
                 }
                 case 11 -> {
+                    int numAttempts = 0, password = 1234, attempt = 0;
+
+                    do {
+                        if (numAttempts >= 3) {
+                            throw new Exception("Cartão bloqueado");
+                        }
+                        System.out.println("Digite o PIN");
+                        numAttempts++;
+                        attempt = 0;
+                    }
+                    while ((attempt = sc.nextInt()) != password);
+                    System.out.println("Acesso liberado");
                 }
 
             }
