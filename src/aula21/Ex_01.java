@@ -1,6 +1,5 @@
 package aula21;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Ex_01 {
