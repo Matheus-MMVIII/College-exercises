@@ -1,26 +1,19 @@
 package aula27;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Ex_03 {
 
     public static void main(String[] args) {
-
-        try (Scanner sc = new Scanner(System.in)) {
-            int[][] A = generateMatrix(3,2), B = generateMatrix(2,4), C = new int[3][4];
+        int[][] A = generateMatrix(3,2), B = generateMatrix(2,4), C = new int[3][4];
       System.out.println("A = ");
-            printMatrix(A);
+        printMatrix(A);
       System.out.println("B = ");
-            printMatrix(B);
+        printMatrix(B);
 
-            C = calcMatrix(A, B);
+        C = calcMatrix(A, B);
       System.out.println("C =");
-            printMatrix(C);
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        printMatrix(C);
     }
 
     public static int[][] generateMatrix(int line, int column) {
