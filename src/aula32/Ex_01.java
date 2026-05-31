@@ -12,7 +12,7 @@ public class Ex_01 {
 
             float imc = calcIMC(weight, height);
 
-            System.out.printf("IMC: %.2f", imc);
+            System.out.printf("IMC: %.2f \n", imc);
             System.out.println("Classificação: "+situationIMC(imc));
         } catch (Exception e) {
             System.out.println("ERROR: "+e.getMessage());
