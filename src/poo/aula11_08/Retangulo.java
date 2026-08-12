@@ -13,10 +13,10 @@ public class Retangulo {
     }
 
     public void exibirArea() {
-        System.out.println(calcularArea());
+        System.out.println("Area: "+calcularArea());
     }
 
     public void exibirPerimetro() {
-        System.out.println(calcularPerimetro());
+        System.out.println("Perimetro: "+calcularPerimetro());
     }
 }
