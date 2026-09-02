@@ -1,4 +1,4 @@
-package poo.aula20_08.ex_01;
+package poo.aula03_20_08.ex_01;
 
 public class Produto {
     public String nome;
